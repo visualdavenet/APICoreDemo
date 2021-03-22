@@ -57,10 +57,38 @@ namespace APICoreDemo.Controllers
             return View(customer);
         }
 
+        public ActionResult SignUp()
+        {
+            ViewBag.Message = "Customer Sign Up";
+
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult SignUp(Customer customer)
+        {
+            if (ModelState.IsValid)
+            {
+                int recordsCreated = DataLogic.CreateCustomer(
+                    customer.FirstName,
+                    customer.LastName,
+                    customer.Occupation,
+                    customer.City,
+                    customer.State,
+                    customer.Email,
+                    customer.ImageURL);
+
+                return RedirectToAction("CustomerList");
+            }
+
+            return View();
         }
 
         public JsonResult GetCustomers()

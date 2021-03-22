@@ -9,7 +9,7 @@
     <script type="text/javascript" src="~/js/datetime.js"></script>
 </head>
 <body onload="realtimeClock();">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow" style="background-color:aliceblue;">
         @Html.ActionLink("Visualdave Demo Site", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
@@ -29,14 +29,14 @@
                     @Html.ActionLink("Customer List", "CustomerList", "Home", new { area = "" }, new { @class = "nav-link" })
                 </li>
                 @*<li class="nav-item">
-                @Html.ActionLink("Customer List(Azure Table)", "CustomerListCosmoDB", "Home", new { area = "" }, new { @class = "nav-link" })
-            </li>*@
+                        @Html.ActionLink("Customer List(Azure Table)", "CustomerListCosmoDB", "Home", new { area = "" }, new { @class = "nav-link" })
+                    </li>*@
             </ul>
             <div id="clockMain" class="navbar-nav mr-auto align-baseline shadow rounded"></div>
         </div>
         @*<div class="navbar-nav ml-auto align-baseline">
-            <a class="button" href="http://visualdave.azurewebsites.net/" data-size="large" aria-label="Hosted on Azure">Hosted on Azure</a>
-        </div>&nbsp;&nbsp;*@
+                <a class="button" href="http://visualdave.azurewebsites.net/" data-size="large" aria-label="Hosted on Azure">Hosted on Azure</a>
+            </div>&nbsp;&nbsp;*@
         <div class="navbar-nav ml-auto align-baseline">
             <a class="github-button" href="https://github.com/visualdavenet" data-size="large" aria-label="Follow visualdavenet on GitHub">Code On Github</a>
         </div>&nbsp;&nbsp;
@@ -53,6 +53,3 @@
         <br />
     </div>
 </footer>
-
-
-

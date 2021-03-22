@@ -11,7 +11,7 @@ namespace APICoreDemo.DataLayer
 {
     public class DataLogic
     {
-        public int CreateCustomer(string firstName, string lastName, string occupation,
+        public static int CreateCustomer(string firstName, string lastName, string occupation,
             string city, string state, string email, string imageURL)
         {
             CustomerDataModel data = new CustomerDataModel
