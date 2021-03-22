@@ -22,7 +22,7 @@ namespace APICoreDemo
             Configuration = configuration;
             ConfigurationRoot = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
-                .AddJsonFile("appSettings.json")
+                .AddJsonFile("appSettings.dev.json")
                 .Build();
         }
 
